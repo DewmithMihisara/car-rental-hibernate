@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1200.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.DashboardFormController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#2d3e50" height="700.0" stroke="#2d3e50" strokeType="INSIDE" strokeWidth="2.0" width="281.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <Button layoutX="36.0" layoutY="192.0" mnemonicParsing="false" onAction="#carCategoryBtnOnAction" prefHeight="48.0" prefWidth="281.0" styleClass="transparent-button" stylesheets="@css/style.css" text="Car Categories" AnchorPane.leftAnchor="0.0">
+         <font>
+            <Font size="21.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/icon/traffic-jam.png" />
+               </image></ImageView>
+         </graphic></Button>
+      <Button layoutX="36.0" layoutY="250.0" mnemonicParsing="false" onAction="#carBtnOnAction" prefHeight="48.0" prefWidth="281.0" styleClass="transparent-button" stylesheets="@css/style.css" text="Cars" AnchorPane.leftAnchor="0.0">
+         <font>
+            <Font size="21.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/icon/electric-car.png" />
+               </image></ImageView>
+         </graphic></Button>
+      <Button layoutX="36.0" layoutY="308.0" mnemonicParsing="false" onAction="#cusBtnOnAction" prefHeight="48.0" prefWidth="281.0" styleClass="transparent-button" stylesheets="@css/style.css" text="Customers" AnchorPane.leftAnchor="0.0">
+         <font>
+            <Font size="21.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/icon/customer.png" />
+               </image></ImageView>
+         </graphic></Button>
+      <Button layoutX="36.0" layoutY="366.0" mnemonicParsing="false" onAction="#nwRentBtnOnAction" prefHeight="48.0" prefWidth="281.0" styleClass="transparent-button" stylesheets="@css/style.css" text="New Rents" AnchorPane.leftAnchor="0.0">
+         <font>
+            <Font size="21.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/icon/car-rental.png" />
+               </image></ImageView>
+         </graphic></Button>
+      <Button layoutX="36.0" layoutY="424.0" mnemonicParsing="false" onAction="#activeRentBtnOnAction" prefHeight="48.0" prefWidth="281.0" styleClass="transparent-button" stylesheets="@css/style.css" text="Active Rents" AnchorPane.leftAnchor="0.0">
+         <font>
+            <Font size="21.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/icon/checklist.png" />
+               </image></ImageView>
+         </graphic></Button>
+      <Button layoutX="36.0" layoutY="482.0" mnemonicParsing="false" onAction="#settingsBtnOnAction" prefHeight="48.0" prefWidth="281.0" styleClass="transparent-button" stylesheets="@css/style.css" text="Settings" AnchorPane.leftAnchor="0.0">
+         <font>
+            <Font size="21.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/icon/setting.png" />
+               </image></ImageView>
+         </graphic></Button>
+      <Button layoutX="36.0" layoutY="599.0" mnemonicParsing="false" onAction="#logOutBtnOnAction" prefHeight="48.0" prefWidth="281.0" styleClass="transparent-button" stylesheets="@css/style.css" text="Log Out" AnchorPane.leftAnchor="0.0">
+         <font>
+            <Font size="21.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/icon/exit.png" />
+               </image></ImageView>
+         </graphic></Button>
+      <AnchorPane layoutX="281.0" prefHeight="700.0" prefWidth="919.0">
+         <children>
+            <ImageView fitHeight="427.0" fitWidth="597.0" layoutX="173.0" layoutY="182.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/logo/Black%20n%20White%20Luxury%20%20Rent%20Car%20Logo.png" />
+               </image>
+            </ImageView>
+         </children></AnchorPane>
+      <Button fx:id="homeBtn" layoutX="53.0" layoutY="14.0" mnemonicParsing="false" onAction="#homeBtnOnAction" prefHeight="121.0" prefWidth="121.0" style="-fx-background-color: tranceparent;">
+         <graphic>
+            <ImageView fitHeight="168.0" fitWidth="157.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/logo/mini%20logo.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+   </children>
+</AnchorPane>

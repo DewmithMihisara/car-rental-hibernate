@@ -1,0 +1,14 @@
+.transparent-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-background-radius: 0;
+    -fx-alignment: baseline-left;
+}
+
+.transparent-button:hover {
+    -fx-background-color: #1BBC9B;
+}
+
+.transparent-button:pressed {
+    -fx-background-color: #1BBC9B;
+}
