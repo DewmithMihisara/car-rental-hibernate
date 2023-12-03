@@ -7,7 +7,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="700.0" prefWidth="1200.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.DashboardFormController">
+<AnchorPane fx:id="root" prefHeight="700.0" prefWidth="1200.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.DashboardFormController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#2d3e50" height="700.0" stroke="#2d3e50" strokeType="INSIDE" strokeWidth="2.0" width="281.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
       <Button layoutX="36.0" layoutY="192.0" mnemonicParsing="false" onAction="#carCategoryBtnOnAction" prefHeight="48.0" prefWidth="281.0" styleClass="transparent-button" stylesheets="@css/style.css" text="Car Categories" AnchorPane.leftAnchor="0.0">
@@ -80,7 +80,7 @@
                   <Image url="@../img/icon/exit.png" />
                </image></ImageView>
          </graphic></Button>
-      <AnchorPane layoutX="281.0" prefHeight="700.0" prefWidth="919.0">
+      <AnchorPane fx:id="bodyRoot" layoutX="281.0" prefHeight="700.0" prefWidth="919.0">
          <children>
             <ImageView fitHeight="427.0" fitWidth="597.0" layoutX="173.0" layoutY="182.0" pickOnBounds="true" preserveRatio="true">
                <image>

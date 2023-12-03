@@ -1,0 +1,20 @@
+.button {
+    -fx-background-color: #ffffff;
+    -fx-text-fill: black;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-color: #000000;
+}
+
+.button:hover {
+    -fx-background-color: #1BBC9B;
+    -fx-border-color: #1BBC9B;
+    -fx-text-fill: #ffffff;
+}
+
+/* Styling for the button on click */
+.button:pressed {
+    -fx-background-color: #1BBC9B;
+    -fx-border-color: #1BBC9B;
+    -fx-text-fill: #ffffff;
+}
