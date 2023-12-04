@@ -72,7 +72,11 @@ public class DashboardFormController {
 
     @FXML
     void settingsBtnOnAction(ActionEvent event) {
-
+        try {
+            Navigation.navigation(Rout.USER, bodyRoot);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 }

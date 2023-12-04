@@ -19,6 +19,7 @@ public class Navigation {
             case CAR -> initUi("carsForm.fxml");
             case HOME -> initUi("homeForm.fxml");
             case CUSTOMER -> initUi("customerForm.fxml");
+            case USER -> initUi("userForm.fxml");
         }
     }
     private static void initUi(String location) throws IOException {
