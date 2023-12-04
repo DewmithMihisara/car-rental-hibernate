@@ -44,12 +44,20 @@ public class DashboardFormController {
 
     @FXML
     void cusBtnOnAction(ActionEvent event) {
-
+        try {
+            Navigation.navigation(Rout.CUSTOMER, bodyRoot);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @FXML
     void homeBtnOnAction(ActionEvent event) {
-
+        try {
+            Navigation.navigation(Rout.HOME, bodyRoot);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @FXML

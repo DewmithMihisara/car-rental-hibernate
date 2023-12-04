@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="700.0" prefWidth="919.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.HomeFormController">
+   <children>
+      <ImageView fitHeight="427.0" fitWidth="597.0" layoutX="183.0" layoutY="192.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/logo/Black%20n%20White%20Luxury%20%20Rent%20Car%20Logo.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

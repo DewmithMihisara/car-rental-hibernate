@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="919.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.CarsFormController">
+   <children>
+      <Label layoutX="79.0" layoutY="47.0" text="Cars" AnchorPane.leftAnchor="69.0">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Label>
+      <TextField fx:id="searchTxt" layoutX="470.0" layoutY="73.0" onAction="#searchTxtOnAction" prefHeight="25.0" prefWidth="317.0" style="-fx-background-color: tranceparent;" />
+      <Button fx:id="searchBtn" layoutX="805.0" layoutY="69.0" mnemonicParsing="false" onAction="#searchBtnOnAction" prefHeight="30.0" prefWidth="33.0" stylesheets="@css/add.css">
+         <graphic>
+            <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/icon/search.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Line endX="217.99993896484375" endY="7.62939453125E-6" layoutX="569.0" layoutY="98.0" startX="-100.0" />
+      <Label layoutX="79.0" layoutY="151.0" text="ID :">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="idLbl" layoutX="108.0" layoutY="151.0" text="Label">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="80.0" layoutY="185.0" text="Car No :">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="carNoTxt" layoutX="164.0" layoutY="179.0" onAction="#carNoTxtOnAction" prefHeight="25.0" prefWidth="167.0" style="-fx-background-color: tranceperant;" />
+      <Line fx:id="carNoLine" endX="66.0" layoutX="265.0" layoutY="204.0" startX="-100.0" />
+      <Button fx:id="deleteBtn" layoutX="266.0" layoutY="442.0" mnemonicParsing="false" onAction="#deleteBtnOnAction" prefHeight="30.0" prefWidth="65.0" stylesheets="@css/btn.css" text="Delete" />
+      <Button fx:id="upBtn" layoutX="175.0" layoutY="442.0" mnemonicParsing="false" onAction="#upBtnOnAction" prefHeight="30.0" prefWidth="65.0" stylesheets="@css/btn.css" text="Update" />
+      <Button fx:id="svBtn" layoutX="83.0" layoutY="442.0" mnemonicParsing="false" onAction="#svBtnOnAction" prefHeight="30.0" prefWidth="65.0" stylesheets="@css/btn.css" text="Save" />
+      <Button fx:id="addBtn" layoutX="298.0" layoutY="147.0" mnemonicParsing="false" onAction="#addNewBtnOnAction" prefHeight="18.0" prefWidth="33.0" stylesheets="@css/add.css" text="+" />
+      <Label layoutX="80.0" layoutY="224.0" text="Brand :">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="81.0" layoutY="257.0" text="Model :">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="82.0" layoutY="293.0" text="Year :">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="83.0" layoutY="328.0" text="Rate :">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="83.0" layoutY="366.0" text="Category :">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="83.0" layoutY="407.0" text="Deposit :">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="brandTxt" layoutX="164.0" layoutY="215.0" onAction="#brandTxtOnAction" prefHeight="25.0" prefWidth="167.0" style="-fx-background-color: tranceperant;" />
+      <Line fx:id="brandLine" endX="66.0" layoutX="265.0" layoutY="240.0" startX="-100.0" />
+      <TextField fx:id="modelTxt" layoutX="164.0" layoutY="251.0" onAction="#modelTxtOnAction" prefHeight="25.0" prefWidth="167.0" style="-fx-background-color: tranceperant;" />
+      <Line fx:id="modelLine" endX="66.0" layoutX="265.0" layoutY="276.0" startX="-100.0" />
+      <TextField fx:id="yearTxt" layoutX="164.0" layoutY="287.0" onAction="#yearTxtOnAction" prefHeight="25.0" prefWidth="167.0" style="-fx-background-color: tranceperant;" />
+      <Line fx:id="yearLine" endX="66.0" layoutX="265.0" layoutY="312.0" startX="-100.0" />
+      <TextField fx:id="rateTxt" layoutX="164.0" layoutY="324.0" onAction="#rateTxtOnAction" prefHeight="25.0" prefWidth="167.0" style="-fx-background-color: tranceperant;" />
+      <Line fx:id="rateLine" endX="66.0" layoutX="265.0" layoutY="349.0" startX="-100.0" />
+      <TextField fx:id="depositeTxt" layoutX="164.0" layoutY="398.0" onAction="#depositeTxtOnAction" prefHeight="25.0" prefWidth="167.0" style="-fx-background-color: tranceperant;" />
+      <Line fx:id="depositeLine" endX="66.0" layoutX="265.0" layoutY="423.0" startX="-100.0" />
+      <ComboBox fx:id="categoryCmbBox" layoutX="165.0" layoutY="361.0" prefWidth="167.0" />
+      <TableView fx:id="carTbl" layoutX="348.0" layoutY="142.0" prefHeight="503.0" prefWidth="503.0">
+        <columns>
+          <TableColumn fx:id="idColm" prefWidth="67.0" text="Id" />
+          <TableColumn fx:id="noClm" prefWidth="97.0" text="Number" />
+            <TableColumn fx:id="brandClm" prefWidth="79.0" text="Brand" />
+            <TableColumn fx:id="modelClm" prefWidth="104.0" text="Model" />
+            <TableColumn fx:id="rateClm" prefWidth="95.0" text="Rate" />
+            <TableColumn fx:id="stsClm" prefWidth="60.0" text="Status" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
