@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
+import lk.ijse.configaration.SessionFactoryConfig;
 import lk.ijse.controller.util.Navigation;
 import lk.ijse.controller.util.Rout;
 
@@ -18,7 +19,13 @@ public class DashboardFormController {
 
     @FXML
     private AnchorPane root;
-
+    @FXML
+    void initialize() {
+        Thread printThread = new Thread(() -> {
+            SessionFactoryConfig.getInstance().getSession();
+        });
+        printThread.start();
+    }
     @FXML
     void activeRentBtnOnAction(ActionEvent event) {
 
