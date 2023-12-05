@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -19,7 +20,10 @@
                <image>
                   <Image url="@../img/icon/traffic-jam.png" />
                </image></ImageView>
-         </graphic></Button>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
       <Button layoutX="36.0" layoutY="250.0" mnemonicParsing="false" onAction="#carBtnOnAction" prefHeight="48.0" prefWidth="281.0" styleClass="transparent-button" stylesheets="@css/style.css" text="Cars" AnchorPane.leftAnchor="0.0">
          <font>
             <Font size="21.0" />
@@ -29,7 +33,10 @@
                <image>
                   <Image url="@../img/icon/electric-car.png" />
                </image></ImageView>
-         </graphic></Button>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
       <Button layoutX="36.0" layoutY="308.0" mnemonicParsing="false" onAction="#cusBtnOnAction" prefHeight="48.0" prefWidth="281.0" styleClass="transparent-button" stylesheets="@css/style.css" text="Customers" AnchorPane.leftAnchor="0.0">
          <font>
             <Font size="21.0" />
@@ -39,7 +46,10 @@
                <image>
                   <Image url="@../img/icon/customer.png" />
                </image></ImageView>
-         </graphic></Button>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
       <Button layoutX="36.0" layoutY="366.0" mnemonicParsing="false" onAction="#nwRentBtnOnAction" prefHeight="48.0" prefWidth="281.0" styleClass="transparent-button" stylesheets="@css/style.css" text="New Rents" AnchorPane.leftAnchor="0.0">
          <font>
             <Font size="21.0" />
@@ -49,7 +59,10 @@
                <image>
                   <Image url="@../img/icon/car-rental.png" />
                </image></ImageView>
-         </graphic></Button>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
       <Button layoutX="36.0" layoutY="424.0" mnemonicParsing="false" onAction="#activeRentBtnOnAction" prefHeight="48.0" prefWidth="281.0" styleClass="transparent-button" stylesheets="@css/style.css" text="Active Rents" AnchorPane.leftAnchor="0.0">
          <font>
             <Font size="21.0" />
@@ -59,7 +72,10 @@
                <image>
                   <Image url="@../img/icon/checklist.png" />
                </image></ImageView>
-         </graphic></Button>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
       <Button layoutX="36.0" layoutY="482.0" mnemonicParsing="false" onAction="#settingsBtnOnAction" prefHeight="48.0" prefWidth="281.0" styleClass="transparent-button" stylesheets="@css/style.css" text="Settings" AnchorPane.leftAnchor="0.0">
          <font>
             <Font size="21.0" />
@@ -69,7 +85,10 @@
                <image>
                   <Image url="@../img/icon/setting.png" />
                </image></ImageView>
-         </graphic></Button>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
       <Button layoutX="36.0" layoutY="599.0" mnemonicParsing="false" onAction="#logOutBtnOnAction" prefHeight="48.0" prefWidth="281.0" styleClass="transparent-button" stylesheets="@css/style.css" text="Log Out" AnchorPane.leftAnchor="0.0">
          <font>
             <Font size="21.0" />
@@ -79,7 +98,10 @@
                <image>
                   <Image url="@../img/icon/exit.png" />
                </image></ImageView>
-         </graphic></Button>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
       <AnchorPane fx:id="bodyRoot" layoutX="281.0" prefHeight="700.0" prefWidth="919.0">
          <children>
             <ImageView fitHeight="427.0" fitWidth="597.0" layoutX="173.0" layoutY="182.0" pickOnBounds="true" preserveRatio="true">
@@ -96,6 +118,9 @@
                </image>
             </ImageView>
          </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
    </children>
 </AnchorPane>
