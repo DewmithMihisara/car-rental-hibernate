@@ -16,9 +16,8 @@ import java.util.List;
 public class Category {
 
     @Id
-    @Column(name = "CatId",nullable = false)
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    @Column(name = "CatId",nullable = false,length = 50)
+    private String id;
 
     @Column(name = "Catname",length = 100, nullable = false, unique = true)
     private String name;
@@ -26,7 +25,7 @@ public class Category {
     @OneToMany(mappedBy = "categoryEntity",targetEntity = Car.class)
     List<Car> carEntities;
 
-    public Category(Integer id, String name) {
+    public Category(String id, String name) {
         this.id = id;
         this.name = name;
     }

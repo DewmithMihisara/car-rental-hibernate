@@ -35,7 +35,7 @@
          </font>
       </Label>
       <TextField fx:id="categoryNameTxt" layoutX="178.0" layoutY="176.0" onAction="#categoryNameTxtOnAction" prefHeight="25.0" prefWidth="216.0" style="-fx-background-color: tranceperant;" />
-      <Line endX="116.0" layoutX="277.0" layoutY="201.0" startX="-100.0" />
+      <Line fx:id="catNameLine" endX="116.0" layoutX="277.0" layoutY="201.0" startX="-100.0" />
       <TableView fx:id="categoryTbl" layoutX="459.0" layoutY="138.0" prefHeight="491.0" prefWidth="376.0">
         <columns>
           <TableColumn fx:id="idClm" prefWidth="114.57247924804688" text="Id" />
