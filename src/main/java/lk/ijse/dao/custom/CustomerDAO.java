@@ -5,4 +5,7 @@ import lk.ijse.dao.SuperDAO;
 import lk.ijse.entity.Customer;
 
 public interface CustomerDAO extends CrudDAO<Customer,String> {
+    String getNextId();
+
+    Customer getItem(String text);
 }

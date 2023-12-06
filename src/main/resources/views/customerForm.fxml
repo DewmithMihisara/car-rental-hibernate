@@ -127,10 +127,10 @@
       <TableView fx:id="custTbl" layoutX="360.0" layoutY="152.0" prefHeight="512.0" prefWidth="505.0">
         <columns>
           <TableColumn fx:id="idColm" prefWidth="48.0" text="Id" />
-          <TableColumn prefWidth="102.0" text="Name" />
+          <TableColumn fx:id="nameClm" prefWidth="102.0" text="Name" />
             <TableColumn fx:id="addressColm" prefWidth="141.0" text="Address" />
             <TableColumn fx:id="mobileColm" prefWidth="110.0" text="Mobile" />
-            <TableColumn fx:id="overdueRentColm" prefWidth="102.0" text="Overdue Rent" />
+            <TableColumn fx:id="mailClm" prefWidth="102.0" text="E-mail" />
         </columns>
       </TableView>
    </children>

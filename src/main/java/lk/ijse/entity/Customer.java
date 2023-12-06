@@ -44,4 +44,13 @@ public class Customer {
     List<Rent> rentEntities;
 
 
+    public Customer(String id, String userName, String email, CustomerFullName customerFullName, CustomerAddress customerAddress, String postalCode, String mobile) {
+        this.id = id;
+        this.userName = userName;
+        this.email = email;
+        this.fullName = customerFullName;
+        this.address = customerAddress;
+        this.postalCode = postalCode;
+        this.mobiles = mobile;
+    }
 }
