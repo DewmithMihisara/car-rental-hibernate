@@ -14,9 +14,8 @@ import lombok.*;
 
 public class Rent {
     @Id
-    @Column(name = "RentId",nullable = false)
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    @Column(name = "RentId",nullable = false,length = 50)
+    private String id;
 
     @Column(name = "rentDate",nullable = false,columnDefinition = "date")
     private Date date;

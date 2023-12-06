@@ -5,4 +5,5 @@ import lk.ijse.dao.SuperDAO;
 import lk.ijse.entity.Car;
 
 public interface CarDAO extends CrudDAO<Car,String> {
+    String getNewId();
 }

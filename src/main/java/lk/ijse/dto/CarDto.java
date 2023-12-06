@@ -8,18 +8,18 @@ import lombok.*;
 
 public class CarDto {
 
-    private Integer id;
+    private String id;
     private String number;
     private String brand;
     private String model;
     private Integer year;
     private Double rate;
-    private Integer catId;
+    private String catId;
     private Boolean isRentable;
     private Double depositAmount;
 
 
-    public CarDto(String number, String brand, String model, Integer year, Double rate, Integer catId) {
+    public CarDto(String number, String brand, String model, Integer year, Double rate, String catId) {
         this.number = number;
         this.brand = brand;
         this.model = model;

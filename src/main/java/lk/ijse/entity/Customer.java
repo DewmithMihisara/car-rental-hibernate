@@ -18,9 +18,8 @@ import java.util.List;
 
 public class Customer {
     @Id
-    @Column(name = "CustId",nullable = false)
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    @Column(name = "CustId",nullable = false,length = 50)
+    private String id;
 
     @Column(name = "UserName",length = 50,nullable = false)
     private String userName;

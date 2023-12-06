@@ -14,9 +14,8 @@ import java.util.List;
 
 public class Car {
     @Id
-    @Column(name = "CarId",nullable = false)
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    @Column(name = "CarId",nullable = false,length = 50)
+    private String id;
 
     @Column(name = "number",length = 10,nullable = false, unique = true)
     private String number;
@@ -46,4 +45,15 @@ public class Car {
     @OneToMany(mappedBy = "carEntity",targetEntity = Rent.class)
     List<Rent> rentEntities;
 
+    public Car(String id, String number, String brand, String model, Integer year, Double rate, Boolean isRentable, Double depositAmount, Category category) {
+        this.id = id;
+        this.number = number;
+        this.brand = brand;
+        this.model = model;
+        this.year = year;
+        this.rate = rate;
+        this.isRentable = isRentable;
+        this.depositAmount = depositAmount;
+        this.categoryEntity = category;
+    }
 }

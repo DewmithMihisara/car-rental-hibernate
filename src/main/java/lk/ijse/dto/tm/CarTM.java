@@ -13,6 +13,6 @@ public class CarTM {
     private String number;
     private String brand;
     private String model;
-    private String rate;
-    private String toRent;
+    private double rate;
+    private boolean toRent;
 }
