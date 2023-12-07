@@ -163,5 +163,7 @@ public class CategoryFormController {
         svBtn.setDisable(true);
         upBtn.setDisable(true);
         deleteBtn.setDisable(true);
+
+        addBtn1.setDisable(false);
     }
 }

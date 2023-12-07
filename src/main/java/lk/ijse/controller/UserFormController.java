@@ -273,5 +273,7 @@ public class UserFormController {
         svBtn.setDisable(true);
         upBtn.setDisable(true);
         deleteBtn.setDisable(true);
+
+        addBtn.setDisable(false);
     }
 }

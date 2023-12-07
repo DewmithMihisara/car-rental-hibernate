@@ -337,6 +337,8 @@ public class CustomerFormController {
         postalCodeTxt.clear();
         emailTxt.clear();
         mobileTxt.clear();
+
+        addBtn.setDisable(false);
     }
     private boolean validation() {
         urName=false;
