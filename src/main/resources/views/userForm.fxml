@@ -11,7 +11,6 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="700.0" prefWidth="919.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.UserFormController">
    <children>
       <Label layoutX="99.0" layoutY="67.0" text="Settings" AnchorPane.leftAnchor="69.0">
@@ -56,7 +55,7 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="usrNameTxt1" layoutX="167.0" layoutY="235.0" onAction="#lastNameTxtOnAction" prefHeight="25.0" prefWidth="167.0" style="-fx-background-color: tranceperant;" />
+      <TextField fx:id="lastNameTxt" layoutX="167.0" layoutY="235.0" onAction="#lastNameTxtOnAction" prefHeight="25.0" prefWidth="167.0" style="-fx-background-color: tranceperant;" />
       <Line fx:id="lastNameLine" endX="66.0" layoutX="268.0" layoutY="260.0" startX="-100.0" />
       <Label layoutX="69.0" layoutY="283.0" text="Role :">
          <font>
@@ -83,7 +82,7 @@
         <columns>
           <TableColumn fx:id="idColm" prefWidth="75.0" text="Id" />
           <TableColumn fx:id="fullNameColm" prefWidth="163.0" text="Full Name" />
-            <TableColumn prefWidth="112.0" text="Role" />
+            <TableColumn fx:id="roleClm" prefWidth="112.0" text="Role" />
             <TableColumn fx:id="userNameColm" prefWidth="145.0" text="User Name" />
         </columns>
       </TableView>

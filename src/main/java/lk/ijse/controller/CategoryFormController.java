@@ -90,6 +90,8 @@ public class CategoryFormController {
             upBtn.setDisable(false);
             deleteBtn.setDisable(false);
             categoryNameTxt.setDisable(false);
+
+            addBtn1.setDisable(true);
         }else {
             new CustomAlert(Alert.AlertType.ERROR,"Search","Category Not Found","Category Not Found!").show();
         }

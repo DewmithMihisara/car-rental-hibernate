@@ -228,6 +228,8 @@ public class CarsFormController {
             depositeTxt.setDisable(false);
             categoryCmbBox.setDisable(false);
             svBtn.setDisable(true);
+
+            addBtn.setDisable(true);
         }else {
             new CustomAlert(Alert.AlertType.ERROR,"Search","Car Not Found","Car Not Found!").show();
         }

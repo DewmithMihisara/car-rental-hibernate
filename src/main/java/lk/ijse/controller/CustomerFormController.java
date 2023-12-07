@@ -11,8 +11,6 @@ import lk.ijse.bo.BOFactory;
 import lk.ijse.bo.custom.CustomerBO;
 import lk.ijse.controller.util.CustomAlert;
 import lk.ijse.controller.util.Validation;
-import lk.ijse.dto.CarDto;
-import lk.ijse.dto.CategoryDto;
 import lk.ijse.dto.CustomerDto;
 import lk.ijse.dto.tm.CustomerTM;
 
@@ -252,6 +250,8 @@ public class CustomerFormController {
             postalCodeTxt.setDisable(false);
             emailTxt.setDisable(false);
             mobileTxt.setDisable(false);
+
+            addBtn.setDisable(true);
         }else {
             new CustomAlert(Alert.AlertType.ERROR,"Search","Customer Not Found","Customer Not Found!").show();
         }
