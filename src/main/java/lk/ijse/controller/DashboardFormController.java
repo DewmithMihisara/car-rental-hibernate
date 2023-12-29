@@ -28,7 +28,11 @@ public class DashboardFormController {
     }
     @FXML
     void activeRentBtnOnAction(ActionEvent event) {
-
+        try {
+            Navigation.navigation(Rout.ACTIVE_RENT, bodyRoot);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @FXML

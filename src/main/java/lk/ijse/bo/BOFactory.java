@@ -9,7 +9,7 @@ public class BOFactory {
         return factory == null ? new BOFactory() : factory;
     }
     public enum BOTypes{
-        CAR, CATEGORY, CUSTOMER, USER, RENT
+        CAR, CATEGORY, CUSTOMER, USER, RENT, ACTIVE_RENT
     }
     public <T extends SuperBO>T getBO(BOTypes types){
         switch (types){
@@ -23,6 +23,8 @@ public class BOFactory {
                 return (T) new UserBOImpl();
             case RENT:
                 return (T) new RentBOImpl();
+            case ACTIVE_RENT:
+                return (T) new ActiveRentBOImpl();
             default:
                 return null;
         }

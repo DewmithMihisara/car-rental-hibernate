@@ -9,4 +9,6 @@ public interface CarDAO extends CrudDAO<Car,String> {
     String getNewId();
 
     boolean updateAsRent(Session session, Car car);
+
+    Car getCarByNum(String carNumber);
 }

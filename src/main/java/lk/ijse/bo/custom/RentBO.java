@@ -7,4 +7,8 @@ public interface RentBO extends SuperBO {
     String getNewCarId();
 
     boolean placeRent(RentDto rentDto);
+
+    RentDto getRent(String text);
+
+    String closeRent(RentDto rentDto);
 }

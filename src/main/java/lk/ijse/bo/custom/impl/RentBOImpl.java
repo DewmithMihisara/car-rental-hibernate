@@ -28,8 +28,9 @@ public class RentBOImpl implements RentBO {
     @Override
     public boolean placeRent(RentDto rentDto) {
         Customer customer=customerDAO.getItem(rentDto.getCustomerId());
-        Car car=carDAO.get(rentDto.getCarNumber());
-
+        System.out.println(customer == null);
+        Car car=carDAO.getCarByNum(rentDto.getCarNumber());
+        System.out.println(car == null);
         Rent rent=new Rent(
                 rentDto.getId(),
                 rentDto.getRentDate(),
@@ -44,12 +45,13 @@ public class RentBOImpl implements RentBO {
                 customer
         );
         Transaction transaction=session.beginTransaction();
-
-        if (rentDAO.addRent(rent,session)) {
+        if (rentDAO.addRent(rent, session)){
             customer.setToReturn(rentDto.getEndDate());
             if (customerDAO.updateAsRent(session, customer)) {
+                System.out.println("customer ok");
                 car.setIsRentable(false);
                 if (carDAO.updateAsRent(session, car)) {
+                    System.out.println("car ok");
                     transaction.commit();
                     return true;
                 } else {
@@ -64,5 +66,29 @@ public class RentBOImpl implements RentBO {
             transaction.rollback();
             return false;
         }
+    }
+
+    @Override
+    public RentDto getRent(String text) {
+        Rent rent=rentDAO.get(text);
+        return new RentDto(
+                rent.getId(),
+                rent.getDate(),
+                rent.getStartDate(),
+                rent.getEndDate(),
+                rent.getAdvancedPayment(),
+                rent.getDeposit(),
+                rent.getCustomerEntity().getId(),
+                rent.getCarEntity().getCategoryEntity().getId(),
+                rent.getCarEntity().getNumber(),
+                rent.getRate(),
+                rent.getTotal(),
+                rent.getIsActive()
+        );
+    }
+
+    @Override
+    public String closeRent(RentDto rentDto) {
+        return null;
     }
 }

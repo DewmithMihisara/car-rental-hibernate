@@ -117,7 +117,7 @@ public class RentFormController {
         if (customer!=null){
             cusNameLbl.setVisible(true);
             cusNameLbl.setText(customer.getFirstName()+" "+customer.getLastName());
-            if (customer.getToReturn()==null) {
+            if (customer.getToReturn()==null){
                 aligibleLbl.setVisible(true);
                 aligibleLbl.setText("Yes");
             }else {
@@ -180,6 +180,7 @@ public class RentFormController {
                 rentBtn.setDisable(false);
                 carNoTxt1.setText(car.getDepositAmount().toString());
             }else {
+                availableLbl.setVisible(true);
                 availableLbl.setText("No");
                 rentBtn.setDisable(true);
             }
@@ -193,18 +194,6 @@ public class RentFormController {
 
     @FXML
     void rentBtnOnAction(ActionEvent event) {
-        System.out.println("====================================");
-        System.out.println(carCmb);
-        System.out.println(id);
-        System.out.println(stDt);
-        System.out.println(endDt);
-        System.out.println(advance);
-        System.out.println(depo);
-        System.out.println(cus);
-        System.out.println(carCmb);
-        System.out.println("====================================");
-
-
         CarDto car=carBO.getCar(carCmb);
         if (rentBO.placeRent(new RentDto(
                 id,
@@ -225,7 +214,7 @@ public class RentFormController {
             setNull();
         }else {
             new CustomAlert(Alert.AlertType.ERROR,"Rent","Rent Not Placed","Rent Not Placed!").show();
-//            setNull();
+            setNull();
         }
     }
     void setNull(){
@@ -247,8 +236,6 @@ public class RentFormController {
     @FXML
     void initialize(){
         initUi();
-        loadCusIds();
-        loadCarIds();
         setStartDate();
         setValueFactory();
     }
@@ -302,6 +289,8 @@ public class RentFormController {
         cusNameLbl.setText("");
         availableLbl.setText("");
         aligibleLbl.setText("");
+        loadCusIds();
+        loadCarIds();
         carIdCmb.getSelectionModel().clearSelection();
         CusIdCmb.getSelectionModel().clearSelection();
         cusNameLbl.setVisible(false);
@@ -310,6 +299,17 @@ public class RentFormController {
         aligibleLbl.setVisible(false);
         carNoTxt1.setDisable(true);
         endDateDatePicker.setDisable(true);
+        addBtn.setDisable(false);
+        clearTable();
+    }
+    private void clearTable() {
+        try {
+            ObservableList<RentTM> dataList = newRentTbl.getItems();
+            dataList.clear();
+        } catch (Exception e) {
+            throw e;
+        }
+
     }
     private boolean validation() {
         stDate=false;

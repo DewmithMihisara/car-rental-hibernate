@@ -2,10 +2,13 @@ package lk.ijse.dao.custom.impl;
 
 import lk.ijse.configaration.SessionFactoryConfig;
 import lk.ijse.dao.custom.RentDAO;
+import lk.ijse.entity.Car;
 import lk.ijse.entity.Rent;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
+import java.io.Serializable;
 import java.util.List;
 
 public class RentDAOImpl implements RentDAO {
@@ -26,7 +29,12 @@ public class RentDAOImpl implements RentDAO {
 
     @Override
     public Rent get(String s) {
-        return null;
+        try (Session session=SessionFactoryConfig.getInstance().getSession()){
+            Transaction transaction = session.beginTransaction();
+            Rent rent = session.get(Rent.class, s);
+            transaction.commit();
+            return rent;
+        }
     }
 
     @Override
@@ -49,11 +57,17 @@ public class RentDAOImpl implements RentDAO {
 
     @Override
     public boolean addRent(Rent rent, Session session) {
-        try {
-            session.save(rent);
-            return true;
-        }catch (Exception e){
-            return false;
+        Serializable save=session.save(rent);
+        return save!=null;
+    }
+
+    @Override
+    public List<Rent> getAllActive() {
+        try (Session session= SessionFactoryConfig.getInstance().getSession()){
+            String hql = "FROM Rent";
+            Query query = session.createQuery(hql);
+            List<Rent> rentEntities = query.list();
+            return rentEntities;
         }
     }
 }

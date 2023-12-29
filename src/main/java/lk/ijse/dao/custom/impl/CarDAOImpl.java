@@ -12,6 +12,7 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import java.util.List;
 
+
 public class CarDAOImpl implements CarDAO {
     @Override
     public boolean save(Car entity){
@@ -87,5 +88,17 @@ public class CarDAOImpl implements CarDAO {
         }catch (Exception e){
             return false;
         }
+    }
+
+    @Override
+    public Car getCarByNum(String carNumber) {
+        try (Session session=SessionFactoryConfig.getInstance().getSession()){
+            String hql = "FROM Car car WHERE car.number = :carNumber";
+
+            Car car = session.createQuery(hql, Car.class).
+                    setParameter("carNumber", carNumber).uniqueResult();
+            return car;
+        }
+
     }
 }
