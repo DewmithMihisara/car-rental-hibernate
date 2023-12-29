@@ -2,6 +2,7 @@ package lk.ijse.dto;
 
 import lombok.*;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Data
@@ -19,7 +20,7 @@ public class CustomerDto {
     private String district;
     private String postalCode;
     private String mobile;
-    private Date toReturn;
+    private LocalDate toReturn;
 
     public CustomerDto(String id,String userName, String email, String firstName, String lastName, String street, String city, String district, String postalCode, String mobile) {
         this.id = id;

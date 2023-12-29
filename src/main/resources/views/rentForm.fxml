@@ -47,7 +47,7 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="carNoTxt1" layoutX="225.0" layoutY="282.0" onAction="#DepoAmountTxtOnAction" prefHeight="25.0" prefWidth="129.0" style="-fx-background-color: tranceparent;" />
+      <TextField fx:id="carNoTxt1" layoutX="225.0" layoutY="282.0" prefHeight="25.0" prefWidth="129.0" style="-fx-background-color: tranceparent;" />
       <Line fx:id="DepoLine" endX="66.0" layoutX="290.0" layoutY="308.0" startX="-65.0" />
       <Line endX="100.0" layoutX="372.0" layoutY="236.0" opacity="0.2" rotate="90.0" startX="-100.0" />
       <Label layoutX="389.0" layoutY="141.0" text="Customer Details">
@@ -108,5 +108,15 @@
       </TableView>
       <Button fx:id="rentBtn" layoutX="741.0" layoutY="623.0" mnemonicParsing="false" onAction="#rentBtnOnAction" prefHeight="43.0" prefWidth="108.0" stylesheets="@css/btn.css" text="Rent" />
       <Button fx:id="addBtn" layoutX="812.0" layoutY="298.0" mnemonicParsing="false" onAction="#addNewBtnOnAction" prefHeight="18.0" prefWidth="33.0" stylesheets="@css/add.css" text="+" />
+      <Label layoutX="390.0" layoutY="248.0" text="Pendings :">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="aligibleLbl" layoutX="461.0" layoutY="249.0" text="Text">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

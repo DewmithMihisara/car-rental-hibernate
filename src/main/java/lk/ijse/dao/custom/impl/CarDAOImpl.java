@@ -78,4 +78,14 @@ public class CarDAOImpl implements CarDAO {
             return newId;
         }
     }
+
+    @Override
+    public boolean updateAsRent(Session session, Car car) {
+        try {
+            session.update(car);
+            return true;
+        }catch (Exception e){
+            return false;
+        }
+    }
 }

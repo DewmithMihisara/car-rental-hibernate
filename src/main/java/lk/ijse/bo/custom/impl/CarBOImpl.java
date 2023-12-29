@@ -114,4 +114,13 @@ public class CarBOImpl implements CarBO {
                 categoryDAO.get(car.getCatId())
         ));
     }
+
+    @Override
+    public List<String> getIds() {
+        List<String>ids=new ArrayList<>();
+        for(Car car:carDAO.getAll()){
+            ids.add(car.getId());
+        }
+        return ids;
+    }
 }

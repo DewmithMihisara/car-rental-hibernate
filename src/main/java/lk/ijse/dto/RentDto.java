@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @AllArgsConstructor
@@ -12,14 +13,14 @@ import java.util.Date;
 
 public class RentDto {
 
-    private Integer id;
-    private Date rentDate;
-    private Date startDate;
-    private Date endDate;
+    private String id;
+    private LocalDate rentDate;
+    private LocalDate startDate;
+    private LocalDate endDate;
     private Double advancePayment;
     private Double depositAmount;
-    private Integer customerId;
-    private Integer carCategory;
+    private String customerId;
+    private String carCategory;
     private String carNumber;
     private Double rate;
     private Double total;

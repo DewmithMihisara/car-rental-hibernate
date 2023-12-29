@@ -20,4 +20,6 @@ public interface CarBO extends SuperBO {
     boolean updateCar(CarDto carDto);
 
     boolean deleteCar(CarDto car);
+
+    List<String> getIds();
 }

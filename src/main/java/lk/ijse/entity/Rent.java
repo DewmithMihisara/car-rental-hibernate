@@ -2,6 +2,8 @@ package lk.ijse.entity;
 
 import javax.persistence.*;
 import java.sql.Date;
+import java.time.LocalDate;
+
 import lombok.*;
 
 @Entity
@@ -18,13 +20,13 @@ public class Rent {
     private String id;
 
     @Column(name = "rentDate",nullable = false,columnDefinition = "date")
-    private Date date;
+    private LocalDate date;
 
     @Column(name = "StartDate",nullable = false,columnDefinition = "date")
-    private Date startDate;
+    private LocalDate startDate;
 
     @Column(name = "EndDate",nullable = false,columnDefinition = "date")
-    private Date endDate;
+    private LocalDate endDate;
 
     @Column(name = "rate",nullable = false)
     private Double rate;

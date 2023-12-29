@@ -14,17 +14,17 @@ import java.util.List;
 public class CustomerDAOImpl implements CustomerDAO {
     @Override
     public boolean save(Customer entity) {
-        try(Session session = SessionFactoryConfig.getInstance().getSession()){
+        try (Session session = SessionFactoryConfig.getInstance().getSession()) {
             Transaction transaction = session.beginTransaction();
-            Serializable save=session.save(entity);
+            Serializable save = session.save(entity);
             transaction.commit();
-            return save!=null;
+            return save != null;
         }
     }
 
     @Override
     public boolean update(Customer entity) {
-        try(Session session = SessionFactoryConfig.getInstance().getSession()){
+        try (Session session = SessionFactoryConfig.getInstance().getSession()) {
             Transaction transaction = session.beginTransaction();
             session.update(entity);
             transaction.commit();
@@ -34,7 +34,7 @@ public class CustomerDAOImpl implements CustomerDAO {
 
     @Override
     public boolean delete(Customer id) {
-        try(Session session = SessionFactoryConfig.getInstance().getSession()){
+        try (Session session = SessionFactoryConfig.getInstance().getSession()) {
             Transaction transaction = session.beginTransaction();
             Customer customer = session.get(Customer.class, id.getId());
             session.delete(customer);
@@ -50,12 +50,12 @@ public class CustomerDAOImpl implements CustomerDAO {
 
     @Override
     public List<Customer> getAll() {
-        try(Session session = SessionFactoryConfig.getInstance().getSession()){
+        try (Session session = SessionFactoryConfig.getInstance().getSession()) {
             Transaction transaction = session.beginTransaction();
             CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
-            CriteriaQuery<Customer>query= criteriaBuilder.createQuery(Customer.class);
+            CriteriaQuery<Customer> query = criteriaBuilder.createQuery(Customer.class);
             query.from(Customer.class);
-            List<Customer>list = session.createQuery(query).getResultList();
+            List<Customer> list = session.createQuery(query).getResultList();
             transaction.commit();
             return list;
         }
@@ -81,6 +81,16 @@ public class CustomerDAOImpl implements CustomerDAO {
             Customer customer = session.get(Customer.class, text);
             transaction.commit();
             return customer;
+        }
+    }
+
+    @Override
+    public boolean updateAsRent(Session session, Customer customer) {
+        try{
+            session.update(customer);
+            return true;
+        }catch (Exception e){
+            return false;
         }
     }
 }

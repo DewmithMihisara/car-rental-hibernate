@@ -1,9 +1,6 @@
 package lk.ijse.bo;
 
-import lk.ijse.bo.custom.impl.CarBOImpl;
-import lk.ijse.bo.custom.impl.CategoryBOImpl;
-import lk.ijse.bo.custom.impl.CustomerBOImpl;
-import lk.ijse.bo.custom.impl.UserBOImpl;
+import lk.ijse.bo.custom.impl.*;
 
 public class BOFactory {
     private static BOFactory factory;
@@ -12,7 +9,7 @@ public class BOFactory {
         return factory == null ? new BOFactory() : factory;
     }
     public enum BOTypes{
-        CAR, CATEGORY, CUSTOMER, USER
+        CAR, CATEGORY, CUSTOMER, USER, RENT
     }
     public <T extends SuperBO>T getBO(BOTypes types){
         switch (types){
@@ -24,6 +21,8 @@ public class BOFactory {
                 return (T) new CategoryBOImpl();
             case USER:
                 return (T) new UserBOImpl();
+            case RENT:
+                return (T) new RentBOImpl();
             default:
                 return null;
         }

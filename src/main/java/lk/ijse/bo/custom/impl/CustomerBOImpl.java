@@ -4,6 +4,7 @@ import lk.ijse.bo.custom.CustomerBO;
 import lk.ijse.dao.DAOFactory;
 import lk.ijse.dao.custom.CustomerDAO;
 import lk.ijse.dto.CustomerDto;
+import lk.ijse.entity.Category;
 import lk.ijse.entity.Customer;
 import lk.ijse.entity.embedded.CustomerAddress;
 import lk.ijse.entity.embedded.CustomerFullName;
@@ -97,5 +98,14 @@ public class CustomerBOImpl implements CustomerBO {
                 customerDto.getPostalCode(),
                 customerDto.getMobile()
         ));
+    }
+
+    @Override
+    public List<String> getIds() {
+        List<String>idList=new ArrayList<>();
+        for(Customer customer: customerDAO.getAll()){
+            idList.add(customer.getId());
+        }
+        return idList;
     }
 }

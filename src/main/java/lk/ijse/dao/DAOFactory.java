@@ -1,9 +1,6 @@
 package lk.ijse.dao;
 
-import lk.ijse.dao.custom.impl.CarDAOImpl;
-import lk.ijse.dao.custom.impl.CategoryDAOImpl;
-import lk.ijse.dao.custom.impl.CustomerDAOImpl;
-import lk.ijse.dao.custom.impl.UserDAOImpl;
+import lk.ijse.dao.custom.impl.*;
 
 public class DAOFactory {
     private static DAOFactory daoFactory;
@@ -11,14 +8,16 @@ public class DAOFactory {
     private DAOFactory() {
     }
 
-    public static DAOFactory getInstance(){
-        return (daoFactory==null)?(daoFactory=new DAOFactory()):daoFactory;
+    public static DAOFactory getInstance() {
+        return (daoFactory == null) ? (daoFactory = new DAOFactory()) : daoFactory;
     }
-    public enum DAOTypes{
-        CAR, CATEGORY, CUSTOMER, USER
+
+    public enum DAOTypes {
+        CAR, CATEGORY, CUSTOMER, USER, RENT
     }
-    public SuperDAO getDAO(DAOTypes daoTypes){
-        switch (daoTypes){
+
+    public SuperDAO getDAO(DAOTypes daoTypes) {
+        switch (daoTypes) {
             case CUSTOMER:
                 return new CustomerDAOImpl();
             case USER:
@@ -27,6 +26,8 @@ public class DAOFactory {
                 return new CarDAOImpl();
             case CATEGORY:
                 return new CategoryDAOImpl();
+            case RENT:
+                return new RentDAOImpl();
             default:
                 return null;
         }

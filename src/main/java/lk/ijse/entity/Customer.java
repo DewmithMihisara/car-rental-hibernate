@@ -6,6 +6,7 @@ import lk.ijse.entity.embedded.CustomerAddress;
 import lk.ijse.entity.embedded.CustomerFullName;
 import lombok.*;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Entity
@@ -35,7 +36,7 @@ public class Customer {
     private String postalCode;
 
     @Column(name = "returnDate", length = 20)
-    private Date toReturn;
+    private LocalDate toReturn;
 
    @Column(name = "mobile",length = 20)
     private String mobiles;
