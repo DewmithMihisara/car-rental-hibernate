@@ -88,6 +88,7 @@ public class CustomerDAOImpl implements CustomerDAO {
     public boolean updateAsRent(Session session, Customer customer) {
         try{
             session.update(customer);
+            System.out.println("update done");
             return true;
         }catch (Exception e){
             return false;

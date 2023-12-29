@@ -70,4 +70,10 @@ public class RentDAOImpl implements RentDAO {
             return rentEntities;
         }
     }
+
+    @Override
+    public boolean updateRent(Session session, Rent rent) {
+        session.update(rent);
+        return true;
+    }
 }

@@ -81,9 +81,15 @@ public class ActiveRentFormController {
             String resp = rentBO.closeRent(rentDto);
             tableListener();
             loadReservations();
-            new CustomAlert(Alert.AlertType.CONFIRMATION,"Close","Close Rent","Close Rent Successfully!").show();
+            if (resp.equals("success")){
+                new CustomAlert(Alert.AlertType.CONFIRMATION, "Close", "Close Rent", "Close Rent Successfully!").show();
+            }else {
+                new CustomAlert(Alert.AlertType.ERROR, "Close", "Close Rent", "Close Rent Failed!").show();
+            }
         } catch (Exception e) {
             new CustomAlert(Alert.AlertType.ERROR,"Close","Close Rent","Close Rent Failed!").show();
+        }finally {
+            inItUi();
         }
     }
 
@@ -92,6 +98,17 @@ public class ActiveRentFormController {
         setCellValueFactory();
         loadReservations();
         tableListener();
+        inItUi();
+    }
+
+    private void inItUi() {
+        idLbl.setText("");
+        nameLbl.setText("");
+        numLbl.setText("");
+        rentDateLbl.setText("");
+        returnLbl.setText("");
+        overdueLbl.setText("");
+        balanceLbl.setText("");
     }
 
     private void loadReservations() {

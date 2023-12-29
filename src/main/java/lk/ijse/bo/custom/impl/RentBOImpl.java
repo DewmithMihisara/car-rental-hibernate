@@ -89,6 +89,37 @@ public class RentBOImpl implements RentBO {
 
     @Override
     public String closeRent(RentDto rentDto) {
-        return null;
+        Transaction transaction=session.beginTransaction();
+
+        Rent rent=rentDAO.get(rentDto.getId());
+        Customer customer=customerDAO.getItem(rentDto.getCustomerId());
+        Car car=carDAO.getCarByNum(rentDto.getCarNumber());
+
+        rent.setIsActive(false);
+        if (rentDAO.updateRent(session, rent)) {
+            System.out.println("rent ok");
+            customer.setToReturn(null);
+            customerDAO.updateAsRent(session, customer);
+            Customer customer1=customerDAO.getItem(rentDto.getCustomerId());
+            if (customer1.getToReturn()==null){
+                car.setIsRentable(true);
+                System.out.println("customer ok");
+
+                if (carDAO.updateAsRent(session, car)) {
+                    transaction.commit();
+                    System.out.println("success");
+                    return "success";
+                } else {
+                    transaction.rollback();
+                    return "Car Update Error";
+                }
+            } else {
+                transaction.rollback();
+                return "Customer Update Error";
+            }
+        } else {
+            transaction.rollback();
+            return "Rent Save Error";
+        }
     }
 }

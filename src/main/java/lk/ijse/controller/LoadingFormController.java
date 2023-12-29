@@ -8,6 +8,8 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
+import lk.ijse.bo.BOFactory;
+import lk.ijse.bo.custom.UserBO;
 import lk.ijse.configaration.SessionFactoryConfig;
 import lk.ijse.controller.util.Navigation;
 import lk.ijse.controller.util.Rout;
@@ -28,6 +30,7 @@ public class LoadingFormController implements Initializable {
 
     @FXML
     private AnchorPane rootPain;
+    private final UserBO userBO = (UserBO) BOFactory.getInstance().getBO(BOFactory.BOTypes.USER);
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         init();
@@ -58,12 +61,16 @@ public class LoadingFormController implements Initializable {
             loadingBar.setWidth(fullLoadingBar.getWidth() * 0.8);
         });
         KeyFrame keyFrame5 = new KeyFrame(Duration.millis(4500), actionEvent -> {
-            loadingLbl.setText("Welcome to D-24 v1.0.0");
+            loadingLbl.setText("Welcome to car-hire v1.0.0");
             loadingBar.setWidth(fullLoadingBar.getWidth());
         });
         KeyFrame keyFrame6 = new KeyFrame(Duration.millis(5000), actionEvent -> {
             try {
-                Navigation.navigation(Rout.DASH_BOARD,rootPain);
+                if(userBO.getAllUsers().isEmpty()){
+                    Navigation.navigation(Rout.DASH_BOARD,rootPain);
+                }else {
+                    Navigation.navigation(Rout.LOG_IN,rootPain);
+                }
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }

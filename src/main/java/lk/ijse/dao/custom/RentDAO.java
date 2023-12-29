@@ -12,4 +12,6 @@ public interface RentDAO extends CrudDAO<Rent, String> {
     boolean addRent(Rent rent, Session session);
 
     List<Rent> getAllActive();
+
+    boolean updateRent(Session session, Rent rent);
 }

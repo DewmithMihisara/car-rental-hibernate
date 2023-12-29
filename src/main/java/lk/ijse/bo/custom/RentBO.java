@@ -9,6 +9,5 @@ public interface RentBO extends SuperBO {
     boolean placeRent(RentDto rentDto);
 
     RentDto getRent(String text);
-
     String closeRent(RentDto rentDto);
 }
