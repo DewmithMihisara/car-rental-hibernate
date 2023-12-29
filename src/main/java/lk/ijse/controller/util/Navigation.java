@@ -14,8 +14,9 @@ public class Navigation {
         Navigation.root.getChildren().clear();
         Stage window = (Stage) Navigation.root.getScene().getWindow();
         switch (rout) {
+            case LOG_IN -> initUi("logInForm.fxml");
             case CAR_CATEGORY ->initUi("categoryForm.fxml");
-            case DASH_BOARD -> initUi("dashboard.fxml");
+            case DASH_BOARD -> initUi("dashboardForm.fxml");
             case CAR -> initUi("carsForm.fxml");
             case HOME -> initUi("homeForm.fxml");
             case CUSTOMER -> initUi("customerForm.fxml");

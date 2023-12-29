@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootPain" prefHeight="700.0" prefWidth="1200.0" style="-fx-background-color: #2D3E50;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.LoadingFormController">
+   <children>
+      <Label fx:id="loadingLbl" layoutX="100.0" layoutY="534.0" text="Initializing Application...." textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Rectangle fx:id="fullLoadingBar" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="15.0" layoutX="100.0" layoutY="573.0" stroke="#2d3e50" strokeType="INSIDE" style="-fx-fill: #FFFFFF; -fx-arc-height: 20; -fx-arc-width: 20;" width="1000.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" />
+      <Rectangle fx:id="loadingBar" arcHeight="5.0" arcWidth="5.0" fill="#1bbc9b" height="15.0" layoutX="61.0" layoutY="573.0" stroke="#1bbc9b" strokeType="INSIDE" style="-fx-fill: #1bbc9b; -fx-arc-height: 20; -fx-arc-width: 20;" width="14.0" AnchorPane.leftAnchor="100.0" />
+      <ImageView fitHeight="383.0" fitWidth="496.0" layoutX="407.0" layoutY="123.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="194.0" AnchorPane.leftAnchor="407.0" AnchorPane.rightAnchor="410.0" AnchorPane.topAnchor="123.0">
+         <image>
+            <Image url="@../img/logo/mini%20logo.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
