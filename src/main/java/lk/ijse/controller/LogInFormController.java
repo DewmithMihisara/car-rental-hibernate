@@ -10,10 +10,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Line;
 import lk.ijse.bo.BOFactory;
 import lk.ijse.bo.custom.UserBO;
-import lk.ijse.controller.util.CustomAlert;
-import lk.ijse.controller.util.Navigation;
-import lk.ijse.controller.util.Rout;
-import lk.ijse.controller.util.Validation;
+import lk.ijse.controller.util.*;
 import lk.ijse.dto.UserDto;
 
 import java.io.IOException;
@@ -58,10 +55,10 @@ public class LogInFormController {
                         throw new RuntimeException(e);
                     }
                 } else {
-                    new CustomAlert(Alert.AlertType.ERROR, "Error ", "Invalid!", "Invalid password !").show();
+                    PopUpAlerts.popUps(AlertTypes.ERROR, "Error", "Invalid password !");
                 }
             }else {
-                new CustomAlert(Alert.AlertType.ERROR, "Error ", "Invalid!", "Invalid user name !").show();
+                PopUpAlerts.popUps(AlertTypes.ERROR, "Error", "Invalid user name !");
             }
         }
     }

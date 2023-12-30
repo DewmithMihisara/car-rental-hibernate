@@ -9,7 +9,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.shape.Line;
 import lk.ijse.bo.BOFactory;
 import lk.ijse.bo.custom.CustomerBO;
-import lk.ijse.controller.util.CustomAlert;
+import lk.ijse.controller.util.AlertTypes;
+import lk.ijse.controller.util.PopUpAlerts;
 import lk.ijse.controller.util.Validation;
 import lk.ijse.dto.CustomerDto;
 import lk.ijse.dto.tm.CustomerTM;
@@ -172,11 +173,11 @@ public class CustomerFormController {
                     postalCodeTxt.getText(),
                     mobileTxt.getText()
             ))){
-                new CustomAlert(Alert.AlertType.CONFIRMATION, "Update ", "Updated !", "Customer Update successful !").show();
+                PopUpAlerts.popUps(AlertTypes.CONFORMATION, "Save", "Customer Saved Successfully!");
                 fillTbl();
                 initUi();
             }else{
-                new CustomAlert(Alert.AlertType.ERROR, "Update ", "Not Update !", "Update not successful !").show();
+                PopUpAlerts.popUps(AlertTypes.ERROR, "Save", "Customer Not Saved Successfully!");
             }
         }
     }
@@ -195,11 +196,11 @@ public class CustomerFormController {
                     postalCodeTxt.getText(),
                     mobileTxt.getText()
             ))){
-                new CustomAlert(Alert.AlertType.CONFIRMATION, "Update ", "Updated !", "Customer Update successful !").show();
+                PopUpAlerts.popUps(AlertTypes.CONFORMATION, "Update", "Customer Updated Successfully!");
                 initUi();
                 fillTbl();
             }else {
-                new CustomAlert(Alert.AlertType.ERROR, "Update ", "Not Update !", "Update not successful !").show();
+                PopUpAlerts.popUps(AlertTypes.ERROR, "Update", "Customer Not Updated Successfully!");
             }
         }
     }
@@ -217,11 +218,11 @@ public class CustomerFormController {
                 postalCodeTxt.getText(),
                 mobileTxt.getText()
         ))){
-            new CustomAlert(Alert.AlertType.CONFIRMATION,"Delete","Customer Deleted","Customer Delete Successfully!").show();
+            PopUpAlerts.popUps(AlertTypes.CONFORMATION, "Delete", "Customer Delete Successfully!");
             fillTbl();
             initUi();
         }else {
-            new CustomAlert(Alert.AlertType.ERROR,"Delete","Customer Not Deleted","Customer Not Delete Successfully!").show();
+            PopUpAlerts.popUps(AlertTypes.ERROR, "Delete", "Customer Not Delete Successfully!");
         }
     }
     @FXML
@@ -253,7 +254,7 @@ public class CustomerFormController {
 
             addBtn.setDisable(true);
         }else {
-            new CustomAlert(Alert.AlertType.ERROR,"Search","Customer Not Found","Customer Not Found!").show();
+            PopUpAlerts.popUps(AlertTypes.ERROR, "Search", "Customer Not Found!");
         }
         searchTxt.clear();
     }

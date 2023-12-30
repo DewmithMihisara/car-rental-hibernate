@@ -10,7 +10,8 @@ import lk.ijse.bo.BOFactory;
 import lk.ijse.bo.custom.ActiveRentBO;
 import lk.ijse.bo.custom.CustomerBO;
 import lk.ijse.bo.custom.RentBO;
-import lk.ijse.controller.util.CustomAlert;
+import lk.ijse.controller.util.AlertTypes;
+import lk.ijse.controller.util.PopUpAlerts;
 import lk.ijse.dao.custom.RentDAO;
 import lk.ijse.dto.ActiveRentDto;
 import lk.ijse.dto.CategoryDto;
@@ -82,12 +83,12 @@ public class ActiveRentFormController {
             tableListener();
             loadReservations();
             if (resp.equals("success")){
-                new CustomAlert(Alert.AlertType.CONFIRMATION, "Close", "Close Rent", "Close Rent Successfully!").show();
+                PopUpAlerts.popUps(AlertTypes.CONFORMATION, "Close", "Close Rent Successfully!");
             }else {
-                new CustomAlert(Alert.AlertType.ERROR, "Close", "Close Rent", "Close Rent Failed!").show();
+                PopUpAlerts.popUps(AlertTypes.ERROR, "Close", "Close Rent Failed!");
             }
         } catch (Exception e) {
-            new CustomAlert(Alert.AlertType.ERROR,"Close","Close Rent","Close Rent Failed!").show();
+            PopUpAlerts.popUps(AlertTypes.ERROR, "Close", "Close Rent Failed!");
         }finally {
             inItUi();
         }

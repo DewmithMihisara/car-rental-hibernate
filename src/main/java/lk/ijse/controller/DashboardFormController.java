@@ -8,9 +8,7 @@ import javafx.scene.layout.AnchorPane;
 import lk.ijse.bo.BOFactory;
 import lk.ijse.bo.custom.UserBO;
 import lk.ijse.configaration.SessionFactoryConfig;
-import lk.ijse.controller.util.CustomAlert;
-import lk.ijse.controller.util.Navigation;
-import lk.ijse.controller.util.Rout;
+import lk.ijse.controller.util.*;
 
 import java.io.IOException;
 
@@ -85,7 +83,7 @@ public class DashboardFormController {
                 throw new RuntimeException(e);
             }
         }else {
-            new CustomAlert(Alert.AlertType.INFORMATION, "Log Out ", "Error!", "There are no user account. Please create a account for activate this feature !").show();
+            PopUpAlerts.popUps(AlertTypes.INFORMATION, "Log Out", "There are no user account. Please create a account for activate this feature !");
         }
     }
 

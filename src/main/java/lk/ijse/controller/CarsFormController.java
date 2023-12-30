@@ -9,7 +9,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.shape.Line;
 import lk.ijse.bo.BOFactory;
 import lk.ijse.bo.custom.CarBO;
-import lk.ijse.controller.util.CustomAlert;
+import lk.ijse.controller.util.AlertTypes;
+import lk.ijse.controller.util.PopUpAlerts;
 import lk.ijse.controller.util.Validation;
 import lk.ijse.dto.CarDto;
 import lk.ijse.dto.tm.CarTM;
@@ -152,11 +153,11 @@ public class CarsFormController {
                     Double.parseDouble(depositeTxt.getText())
 
             ))){
-                new Alert(Alert.AlertType.CONFIRMATION,"Car Added Successfully").show();
+                PopUpAlerts.popUps(AlertTypes.CONFORMATION, "Add", "Car Added Successfully!");
                 initUi();
                 fillTable();
             }else {
-                new Alert(Alert.AlertType.WARNING,"Car Added Failed").show();
+                PopUpAlerts.popUps(AlertTypes.ERROR, "Add", "Car Added Failed!");
             }
         }
     }
@@ -176,11 +177,11 @@ public class CarsFormController {
                     Double.parseDouble(depositeTxt.getText())
 
             ))){
-                new CustomAlert(Alert.AlertType.CONFIRMATION, "Update ", "Updated !", "Car Update successful !").show();
+                PopUpAlerts.popUps(AlertTypes.CONFORMATION, "Update", "Car Updated Successfully!");
                 initUi();
                 fillTable();
             }else {
-                new CustomAlert(Alert.AlertType.ERROR, "Update ", "Not Update !", "Update not successful !").show();
+                PopUpAlerts.popUps(AlertTypes.ERROR, "Update", "Car Updated Failed!");
             }
         }
     }
@@ -198,11 +199,11 @@ public class CarsFormController {
                 true,
                 Double.parseDouble(depositeTxt.getText())
         ))){
-            new CustomAlert(Alert.AlertType.CONFIRMATION,"Delete","Car Deleted","Car Delete Successfully!").show();
+            PopUpAlerts.popUps(AlertTypes.CONFORMATION, "Delete", "Car Deleted Successfully!");
             fillTable();
             initUi();
         }else {
-            new CustomAlert(Alert.AlertType.ERROR,"Delete","Car Not Deleted","Car Not Delete Successfully!").show();
+            PopUpAlerts.popUps(AlertTypes.ERROR, "Delete", "Car Deleted Failed!");
         }
     }
 
@@ -231,7 +232,7 @@ public class CarsFormController {
 
             addBtn.setDisable(true);
         }else {
-            new CustomAlert(Alert.AlertType.ERROR,"Search","Car Not Found","Car Not Found!").show();
+            PopUpAlerts.popUps(AlertTypes.ERROR, "Search", "Car Not Found!");
         }
         searchTxt.clear();
     }

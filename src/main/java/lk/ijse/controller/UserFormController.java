@@ -9,7 +9,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.shape.Line;
 import lk.ijse.bo.BOFactory;
 import lk.ijse.bo.custom.UserBO;
-import lk.ijse.controller.util.CustomAlert;
+import lk.ijse.controller.util.AlertTypes;
+import lk.ijse.controller.util.PopUpAlerts;
 import lk.ijse.controller.util.Validation;
 import lk.ijse.dto.UserDto;
 import lk.ijse.dto.tm.UserTM;
@@ -109,11 +110,11 @@ public class UserFormController {
                 firstNameTxt.getText(),
                 lastNameTxt.getText()
         ))){
-            new CustomAlert(Alert.AlertType.CONFIRMATION,"Delete","User Deleted","User Delete Successfully!").show();
+            PopUpAlerts.popUps(AlertTypes.CONFORMATION, "Delete", "User Delete Successfully!");
             fillTbl();
             initUi();
         }else {
-            new CustomAlert(Alert.AlertType.ERROR,"Delete","User Not Deleted","User Not Delete Successfully!").show();
+            PopUpAlerts.popUps(AlertTypes.ERROR, "Delete", "User Not Delete Successfully!");
         }
     }
 
@@ -159,7 +160,7 @@ public class UserFormController {
 
             addBtn.setDisable(true);
         }else {
-            new CustomAlert(Alert.AlertType.ERROR,"Search","User Not Found","User Not Found!").show();
+            PopUpAlerts.popUps(AlertTypes.ERROR, "Search", "User Not Found!");
         }
         searchTxt.clear();
     }
@@ -180,11 +181,11 @@ public class UserFormController {
                     firstNameTxt.getText(),
                     lastNameTxt.getText()
                     ))) {
-                new CustomAlert(Alert.AlertType.CONFIRMATION, "Save", "User Saved", "User Save Successfully!").show();
+                PopUpAlerts.popUps(AlertTypes.CONFORMATION, "Save", "User Saved Successfully!");
                 fillTbl();
                 initUi();
             } else {
-                new CustomAlert(Alert.AlertType.ERROR, "Save", "User Not Saved", "User Not Save Successfully!").show();
+                PopUpAlerts.popUps(AlertTypes.ERROR, "Save", "User Not Saved Successfully!");
             }
         }
     }
@@ -216,11 +217,11 @@ public class UserFormController {
                     firstNameTxt.getText(),
                     lastNameTxt.getText()
             ))){
-                new CustomAlert(Alert.AlertType.CONFIRMATION, "Update ", "Updated !", "User Update successful !").show();
+                PopUpAlerts.popUps(AlertTypes.CONFORMATION, "Update", "User Updated Successfully!");
                 initUi();
                 fillTbl();
             }else {
-                new CustomAlert(Alert.AlertType.ERROR, "Update ", "Not Update !", "Update not successful !").show();
+                PopUpAlerts.popUps(AlertTypes.ERROR, "Update", "User Not Updated Successfully!");
             }
         }
     }

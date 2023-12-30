@@ -9,7 +9,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.shape.Line;
 import lk.ijse.bo.BOFactory;
 import lk.ijse.bo.custom.CategoryBO;
-import lk.ijse.controller.util.CustomAlert;
+import lk.ijse.controller.util.AlertTypes;
+import lk.ijse.controller.util.PopUpAlerts;
 import lk.ijse.controller.util.Validation;
 import lk.ijse.dto.CategoryDto;
 import lk.ijse.dto.tm.CategoryTM;
@@ -73,11 +74,11 @@ public class CategoryFormController {
     @FXML
     void deleteBtnOnAction(ActionEvent event) {
         if (categoryBO.deleteCategory(new CategoryDto(idLbl.getText(),categoryNameTxt.getText()))){
-            new CustomAlert(Alert.AlertType.CONFIRMATION,"Delete","Category Deleted","Category Delete Successfully!").show();
+            PopUpAlerts.popUps(AlertTypes.CONFORMATION, "Delete", "Category Delete Successfully!");
             fillTbl();
             initUi();
         }else {
-            new CustomAlert(Alert.AlertType.ERROR,"Delete","Category Not Deleted","Category Not Delete Successfully!").show();
+            PopUpAlerts.popUps(AlertTypes.ERROR, "Delete", "Category Not Delete Successfully!");
         }
     }
 
@@ -93,7 +94,7 @@ public class CategoryFormController {
 
             addBtn1.setDisable(true);
         }else {
-            new CustomAlert(Alert.AlertType.ERROR,"Search","Category Not Found","Category Not Found!").show();
+            PopUpAlerts.popUps(AlertTypes.ERROR, "Search", "Category Not Found!");
         }
         searchTxt.clear();
     }
@@ -107,11 +108,11 @@ public class CategoryFormController {
     void svBtnOnAction(ActionEvent event) {
         if(validation()){
             if (categoryBO.saveCategory(new CategoryDto(idLbl.getText(),categoryNameTxt.getText()))){
-                new CustomAlert(Alert.AlertType.CONFIRMATION,"Save","Category Saved","Category Save Successfully!").show();
+                PopUpAlerts.popUps(AlertTypes.CONFORMATION, "Save", "Category Saved Successfully!");
                 fillTbl();
                 initUi();
             }else {
-                new CustomAlert(Alert.AlertType.ERROR,"Save","Category Not Saved","Category Not Save Successfully!").show();
+                PopUpAlerts.popUps(AlertTypes.ERROR, "Save", "Category Not Saved Successfully!");
             }
         }
 
@@ -120,11 +121,11 @@ public class CategoryFormController {
     void upBtnOnAction(ActionEvent event) {
         if(validation()){
             if (categoryBO.updateCategory(new CategoryDto(idLbl.getText(),categoryNameTxt.getText()))){
-                new CustomAlert(Alert.AlertType.CONFIRMATION,"Update","Category Updated","Category Update Successfully!").show();
+                PopUpAlerts.popUps(AlertTypes.CONFORMATION, "Update", "Category Updated Successfully!");
                 fillTbl();
                 initUi();
             }else {
-                new CustomAlert(Alert.AlertType.ERROR,"Update","Category Not Updated","Category Not Update Successfully!").show();
+                PopUpAlerts.popUps(AlertTypes.ERROR, "Update", "Category Not Updated Successfully!");
             }
         }
     }

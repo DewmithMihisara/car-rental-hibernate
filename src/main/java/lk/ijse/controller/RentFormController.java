@@ -14,7 +14,8 @@ import lk.ijse.bo.BOFactory;
 import lk.ijse.bo.custom.CarBO;
 import lk.ijse.bo.custom.CustomerBO;
 import lk.ijse.bo.custom.RentBO;
-import lk.ijse.controller.util.CustomAlert;
+import lk.ijse.controller.util.AlertTypes;
+import lk.ijse.controller.util.PopUpAlerts;
 import lk.ijse.controller.util.Validation;
 import lk.ijse.dto.CarDto;
 import lk.ijse.dto.CustomerDto;
@@ -209,11 +210,11 @@ public class RentFormController {
                 car.getRate()*(stDt.toEpochDay()-endDt.toEpochDay()),
                 true
         ))){
-            new CustomAlert(Alert.AlertType.CONFIRMATION,"Rent","Rent Placed","Rent Placed Successfully!").show();
+            PopUpAlerts.popUps(AlertTypes.CONFORMATION, "Rent", "CRent Placed Successfully!");
             initUi();
             setNull();
         }else {
-            new CustomAlert(Alert.AlertType.ERROR,"Rent","Rent Not Placed","Rent Not Placed!").show();
+            PopUpAlerts.popUps(AlertTypes.ERROR, "Rent", "Rent Not Placed!");
             setNull();
         }
     }
