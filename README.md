@@ -29,8 +29,11 @@ The project follows a layered architecture design with separation of concerns:
 
 ## Setup Instructions
 
-1. Clone the repository:
-    -`https://github.com/DewmithMihisara/car-rental-hibernate.git`
+1. Clone this repository to your local machine using `git clone`
+  
+  ```sh
+        https://github.com/DewmithMihisara/car-rental-hibernate.git
+   ```
 
 2. Open the project in your preferred IDE.
 
@@ -54,6 +57,20 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Contact
 
-For any inquiries or support, please contact [Your Name](mailto:youremail@example.com).
+Feel free to reach out to me for any inquiries, collaboration opportunities, or just to say hello! You can contact me via:
+
+* Email : mihisaralokuhewage@gmail.com
+* LinkedIn : [https://linkedin.com/in/dewmith-mihisara-67861a202](https://linkedin.com/in/dewmith-mihisara-67861a202)
+* Twitter : [https://twitter.com/Zyne_Galata](https://twitter.com/Zyne_Galata)
+
+***
+</h5>
+<div align="center">
+  
+![repo size](https://img.shields.io/github/repo-size/DewmithMihisara/MyPortfolio?label=Repo%20Size&style=for-the-badge&labelColor=black&color=20bf6b)
+![GitHub stars](https://img.shields.io/github/stars/DewmithMihisara/MyPortfolio?&labelColor=black&color=f7b731&style=for-the-badge)
+![GitHub LastCommit](https://img.shields.io/github/last-commit/DewmithMihisara/MyPortfolio?logo=github&labelColor=black&color=d1d8e0&style=for-the-badge)
+
+</div>
 
 
