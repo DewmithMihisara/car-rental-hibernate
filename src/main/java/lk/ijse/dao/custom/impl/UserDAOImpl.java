@@ -1,5 +1,6 @@
 package lk.ijse.dao.custom.impl;
 
+import lk.ijse.bo.custom.UserBO;
 import lk.ijse.configaration.SessionFactoryConfig;
 import lk.ijse.dao.custom.UserDAO;
 import lk.ijse.entity.Car;
@@ -75,6 +76,17 @@ public class UserDAOImpl implements UserDAO {
             transaction.commit();
             session.close();
             return newId;
+        }
+    }
+
+    @Override
+    public User getByUserName(String text) {
+        try (Session session=SessionFactoryConfig.getInstance().getSession()){
+            Transaction transaction = session.beginTransaction();
+            String hql = "FROM User user WHERE user.userName = :UserName";
+            User user = session.createQuery(hql, User.class).setParameter("UserName", text).uniqueResult();
+            transaction.commit();
+            return user;
         }
     }
 }

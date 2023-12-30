@@ -2,9 +2,13 @@ package lk.ijse.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
+import lk.ijse.bo.BOFactory;
+import lk.ijse.bo.custom.UserBO;
 import lk.ijse.configaration.SessionFactoryConfig;
+import lk.ijse.controller.util.CustomAlert;
 import lk.ijse.controller.util.Navigation;
 import lk.ijse.controller.util.Rout;
 
@@ -19,6 +23,7 @@ public class DashboardFormController {
 
     @FXML
     private AnchorPane root;
+    private final UserBO userBO= (UserBO) BOFactory.getInstance().getBO(BOFactory.BOTypes.USER);
     @FXML
     void initialize() {
         Thread printThread = new Thread(() -> {
@@ -73,7 +78,15 @@ public class DashboardFormController {
 
     @FXML
     void logOutBtnOnAction(ActionEvent event) {
-
+        if (userBO.getAllUsers() != null){
+            try {
+                Navigation.navigation(Rout.LOG_IN, root);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }else {
+            new CustomAlert(Alert.AlertType.INFORMATION, "Log Out ", "Error!", "There are no user account. Please create a account for activate this feature !").show();
+        }
     }
 
     @FXML

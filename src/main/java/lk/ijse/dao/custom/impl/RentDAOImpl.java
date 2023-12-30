@@ -76,4 +76,10 @@ public class RentDAOImpl implements RentDAO {
         session.update(rent);
         return true;
     }
+
+    @Override
+    public Rent get(String id, Session session) {
+        Rent rent = session.get(Rent.class,id);
+        return rent;
+    }
 }

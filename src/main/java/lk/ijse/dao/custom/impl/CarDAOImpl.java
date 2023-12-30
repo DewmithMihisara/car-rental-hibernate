@@ -101,4 +101,10 @@ public class CarDAOImpl implements CarDAO {
         }
 
     }
+
+    @Override
+    public Car getCarByNum(String carNumber, Session session) {
+        Car car= session.get(Car.class,carNumber);
+        return car;
+    }
 }

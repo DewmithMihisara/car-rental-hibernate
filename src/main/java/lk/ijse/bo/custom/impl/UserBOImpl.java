@@ -94,4 +94,17 @@ public class UserBOImpl implements UserBO {
                 userDto.getRole()
         ));
     }
+
+    @Override
+    public UserDto getUserByUserName(String text) {
+        User user = userDAO.getByUserName(text);
+        return new UserDto(
+                user.getId(),
+                user.getUserName(),
+                user.getPassword(),
+                user.getRole(),
+                user.getFullName().getFirstName(),
+                user.getFullName().getLastName()
+        );
+    }
 }

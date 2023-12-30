@@ -86,12 +86,15 @@ public class CustomerDAOImpl implements CustomerDAO {
 
     @Override
     public boolean updateAsRent(Session session, Customer customer) {
-        try{
-            session.update(customer);
-            System.out.println("update done");
-            return true;
-        }catch (Exception e){
-            return false;
-        }
+        System.out.println(customer.getToReturn()+" this is in dao");
+        session.update(customer);
+        return true;
     }
+
+    @Override
+    public Customer getItem(String customerId, Session session) {
+        Customer customer = session.get(Customer.class, customerId);
+        return customer;
+    }
+
 }

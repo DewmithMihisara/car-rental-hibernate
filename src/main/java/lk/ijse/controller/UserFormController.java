@@ -103,11 +103,11 @@ public class UserFormController {
     void deleteBtnOnAction(ActionEvent event) {
         if (userBO.deleteUser(new UserDto(
                 idLbl.getText(),
-                firstNameTxt.getText(),
-                lastNameTxt.getText(),
-                roleTxt.getText(),
                 userNameTxt.getText(),
-                pwTxt.getText()
+                pwTxt.getText(),
+                roleTxt.getText(),
+                firstNameTxt.getText(),
+                lastNameTxt.getText()
         ))){
             new CustomAlert(Alert.AlertType.CONFIRMATION,"Delete","User Deleted","User Delete Successfully!").show();
             fillTbl();
@@ -174,11 +174,12 @@ public class UserFormController {
         if (validation()) {
             if (userBO.saveUser(new UserDto(
                     idLbl.getText(),
-                    firstNameTxt.getText(),
-                    lastNameTxt.getText(),
-                    roleTxt.getText(),
                     userNameTxt.getText(),
-                    pwTxt.getText()))) {
+                    pwTxt.getText(),
+                    roleTxt.getText(),
+                    firstNameTxt.getText(),
+                    lastNameTxt.getText()
+                    ))) {
                 new CustomAlert(Alert.AlertType.CONFIRMATION, "Save", "User Saved", "User Save Successfully!").show();
                 fillTbl();
                 initUi();
@@ -209,11 +210,11 @@ public class UserFormController {
         if(validation()){
             if (userBO.updateUser(new UserDto(
                     idLbl.getText(),
-                    firstNameTxt.getText(),
-                    lastNameTxt.getText(),
-                    roleTxt.getText(),
                     userNameTxt.getText(),
-                    pwTxt.getText()
+                    pwTxt.getText(),
+                    roleTxt.getText(),
+                    firstNameTxt.getText(),
+                    lastNameTxt.getText()
             ))){
                 new CustomAlert(Alert.AlertType.CONFIRMATION, "Update ", "Updated !", "User Update successful !").show();
                 initUi();
@@ -241,7 +242,7 @@ public class UserFormController {
         for (UserDto userDto : userBO.getAllUsers()) {
             userTMS.add(new UserTM(
                     userDto.getId(),
-                    userDto.getFirstName() + " " + userDto.getFirstName(),
+                    userDto.getFirstName() + " " + userDto.getLastName(),
                     userDto.getRole(),
                     userDto.getUserName()
             ));

@@ -13,6 +13,8 @@ import lk.ijse.entity.Rent;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import java.time.LocalDate;
+
 public class RentBOImpl implements RentBO {
     Session session= SessionFactoryConfig.getInstance().getSession();
     RentDAO rentDAO= (RentDAO) DAOFactory.getInstance().getDAO(DAOFactory.DAOTypes.RENT);
@@ -89,37 +91,52 @@ public class RentBOImpl implements RentBO {
 
     @Override
     public String closeRent(RentDto rentDto) {
-        Transaction transaction=session.beginTransaction();
+        try{
+            Transaction transaction=session.beginTransaction();
 
-        Rent rent=rentDAO.get(rentDto.getId());
-        Customer customer=customerDAO.getItem(rentDto.getCustomerId());
-        Car car=carDAO.getCarByNum(rentDto.getCarNumber());
+            Rent rent=rentDAO.get(rentDto.getId(),session);
+            Customer customer=customerDAO.getItem(rentDto.getCustomerId(),session);
+            Car car=carDAO.getCarByNum(rentDto.getCarNumber(),session);
 
-        rent.setIsActive(false);
-        if (rentDAO.updateRent(session, rent)) {
-            System.out.println("rent ok");
-            customer.setToReturn(null);
-            customerDAO.updateAsRent(session, customer);
-            Customer customer1=customerDAO.getItem(rentDto.getCustomerId());
-            if (customer1.getToReturn()==null){
-                car.setIsRentable(true);
-                System.out.println("customer ok");
+            rent.setIsActive(false);
+            if (rentDAO.updateRent(session, rent)) {
 
-                if (carDAO.updateAsRent(session, car)) {
-                    transaction.commit();
-                    System.out.println("success");
-                    return "success";
+                System.out.println("rent ok");
+
+                customer.setToReturn(null);
+
+                customerDAO.updateAsRent(session, customer);
+
+                Customer customer1=customerDAO.getItem(rentDto.getCustomerId());
+
+                System.out.println(customer1.getToReturn());
+
+                if (customer1.getToReturn()==null){
+                    car.setIsRentable(true);
+                    System.out.println("customer ok");
+
+                    if (carDAO.updateAsRent(session, car)) {
+                        transaction.commit();
+                        System.out.println("success");
+                        return "success";
+                    } else {
+                        System.out.println("Car Update Error");
+                        transaction.rollback();
+                        return "Car Update Error";
+                    }
                 } else {
+                    System.out.println("Customer Update Error");
                     transaction.rollback();
-                    return "Car Update Error";
+                    return "Customer Update Error";
                 }
             } else {
+                System.out.println("Rent Save Error");
                 transaction.rollback();
-                return "Customer Update Error";
+                return "Rent Save Error";
             }
-        } else {
-            transaction.rollback();
-            return "Rent Save Error";
+        }catch (Exception e){
+            e.printStackTrace();
+            return "Error";
         }
     }
 }
