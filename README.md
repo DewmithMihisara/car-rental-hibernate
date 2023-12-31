@@ -1,5 +1,7 @@
 # CarHire - Car Rental Management System
 
+![Java](https://img.shields.io/badge/Java-17-orange) ![GitHub](https://img.shields.io/github/license/DewmithMihisara/car-rental-hibernate)
+
 CarHire is a Java-based application developed using JavaFX, Hibernate, CSS, and MySQL, designed to manage the activities of a car rental shop.
 
 ## Overview
